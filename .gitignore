@@ -1,0 +1,13 @@
+# OS metadata
+Thumbs.db
+.DS_Store
+
+# Editor config
+.vscode/
+.idea/
+
+# Node (if added later)
+node_modules/
+dist/
+build/
+.env

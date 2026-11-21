@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Frontend App</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-theme="dark">
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-icon">🚀</span>
+      <span class="logo-text">WebCraft</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#demo">Interactive Demo</a>
+      <a href="#about">About</a>
+    </nav>
+    <div class="nav-actions">
+      <button id="themeToggleBtn" class="btn btn-secondary icon-btn" title="Toggle Theme">
+        <span id="themeIcon">☀️</span>
+      </button>
+      <a href="https://github.com" target="_blank" class="btn btn-primary">GitHub</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="badge">✨ Ready for Production</div>
+      <h1 class="hero-title">Build Fast, Modern Websites <br><span class="gradient-text">Without Complications</span></h1>
+      <p class="hero-subtitle">
+        A lightweight, responsive, and extensible frontend starter designed to get your project off the ground immediately.
+      </p>
+      <div class="hero-cta">
+        <button id="exploreBtn" class="btn btn-primary btn-large">Get Started</button>
+        <button id="actionBtn" class="btn btn-outline btn-large">Learn More</button>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+      <h2 class="section-heading">Why You'll Love This Setup</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3>Zero Build Lag</h3>
+          <p>Instant browser refresh with vanilla HTML, modern CSS variables, and clean JavaScript.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📱</div>
+          <h3>Fully Responsive</h3>
+          <p>Carefully crafted flexbox and grid layouts that look stunning on mobile, tablet, and desktop.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎨</div>
+          <h3>Theme Ready</h3>
+          <p>Seamless dark and light theme toggle built-in with persistent local storage support.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🐙</div>
+          <h3>Git & GitHub Ready</h3>
+          <p>Pre-configured Git repository ready to be pushed to your GitHub profile in seconds.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section id="demo" class="demo-section">
+      <div class="demo-card">
+        <h2>Interactive Playground</h2>
+        <p>Test the live JavaScript state interactions below:</p>
+        <div class="counter-box">
+          <span class="counter-label">Clicks Recorded</span>
+          <span id="counterValue" class="counter-number">0</span>
+          <div class="counter-controls">
+            <button id="decrementBtn" class="btn btn-secondary">-</button>
+            <button id="resetBtn" class="btn btn-outline">Reset</button>
+            <button id="incrementBtn" class="btn btn-secondary">+</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 WebCraft. Created with ❤️. Ready for your custom code.</p>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
