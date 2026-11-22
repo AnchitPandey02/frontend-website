@@ -1,7 +1,7 @@
 import React from 'react';
 import QgisLogo from '../utils/qgisLogo';
 
-export default function HeroSection({ onLaunchWorkbench }) {
+export default function HeroSection() {
   return (
     <section className="hero-section hero-yantrikaran">
       <div className="hero-glow-saffron"></div>
@@ -10,24 +10,24 @@ export default function HeroSection({ onLaunchWorkbench }) {
       <div className="container hero-content">
         {/* Flagship Badge */}
         <div className="badge-pill-bharat">
-          <span className="badge-flag">🇮🇳</span>
+          <span className="badge-flag">📍</span>
           <span className="badge-text">
-            <strong>Yantrikaran AI</strong> • Geospatial Foundation Models for Bharat
+            <strong>Yantrikaran AI</strong> • Geospatial Foundation Models for Urban & Road Infrastructure
           </span>
           <span className="badge-live-dot"></span>
         </div>
 
         {/* Main Heading */}
         <h1 className="hero-heading">
-          Automating Indian Cities with{' '}
+          Automating Infrastructure with{' '}
           <span className="gradient-saffron">Geospatial AI</span> &{' '}
           <span className="gradient-cyan">Drone Vision</span>
         </h1>
 
         {/* Subtitle */}
         <p className="hero-subtext">
-          Engineered for India's complex urban landscapes and rural roadways. Instantly detect{' '}
-          <strong>every building footprint</strong>, identify <strong>potholes & road distress</strong>,
+          Engineered for high-density urban environments and nationwide highways. Instantly detect{' '}
+          <strong>every building footprint</strong>, identify <strong>potholes & road surface distress</strong>,
           and seamlessly synchronize with <strong>QGIS</strong> via our native plugin.
         </p>
 
@@ -43,7 +43,7 @@ export default function HeroSection({ onLaunchWorkbench }) {
           </div>
           <div className="integration-chip">
             <span className="chip-icon">🛣️</span>
-            <span>NHAI & PWD Road Quality AI</span>
+            <span>Highway & Road Quality AI</span>
           </div>
           <div className="integration-chip">
             <span className="chip-icon">🏢</span>
@@ -88,12 +88,12 @@ export default function HeroSection({ onLaunchWorkbench }) {
           </a>
         </div>
 
-        {/* Real-Time Indian Infrastructure Stats */}
+        {/* Real-Time Infrastructure Stats */}
         <div className="hero-stats-grid">
           <div className="stat-card">
             <span className="stat-number gradient-saffron">4.8M+</span>
             <span className="stat-label">Buildings Detected & Segmented</span>
-            <span className="stat-sub">Across 42 Indian Municipalities</span>
+            <span className="stat-sub">Across 42 Municipalities & Regions</span>
           </div>
 
           <div className="stat-card">
@@ -105,7 +105,7 @@ export default function HeroSection({ onLaunchWorkbench }) {
           <div className="stat-card">
             <span className="stat-number text-green">99.2%</span>
             <span className="stat-label">Building IoU Precision</span>
-            <span className="stat-sub">Trained on dense Indian morphology</span>
+            <span className="stat-sub">Trained on dense urban morphology</span>
           </div>
 
           <div className="stat-card">

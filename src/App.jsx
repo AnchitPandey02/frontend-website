@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import GeoRadarBackground from './components/GeoRadarBackground';
+import InteractiveCursorCanvas from './components/InteractiveCursorCanvas';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import GeoAIWorkbench from './components/GeoAIWorkbench';
@@ -105,10 +105,10 @@ export default function App() {
 
   return (
     <>
-      {/* Real-Time Indian Geospatial Radar Canvas */}
-      <GeoRadarBackground />
+      {/* Interactive Cursor Trail & Click Spark Animation Canvas */}
+      <InteractiveCursorCanvas />
 
-      {/* Navigation Bar with QGIS Certified Badge */}
+      {/* Navigation Bar with Official Yi Icon & Wordmark */}
       <Navbar
         mockMode={mockMode}
         baseUrl={baseUrl}
@@ -134,7 +134,7 @@ export default function App() {
       {/* QGIS Native Plugin Showcase (Inspired by TerraLab) */}
       <QgisIntegrationSection soundEnabled={soundEnabled} />
 
-      {/* Solutions for Bharat (Smart Cities, NHAI, SVAMITVA, Water Bodies) */}
+      {/* Solutions for Infrastructure & Smart Cities */}
       <IndianSolutionsSection />
 
       {/* Media Placeholders for Videos & Orthomosaics */}

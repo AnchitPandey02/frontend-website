@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { INDIAN_LOCATIONS } from '../utils/geoMockData';
 import QgisLogo from '../utils/qgisLogo';
 import { playCyberSound } from '../utils/audioFx';
@@ -87,16 +87,16 @@ export default function GeoAIWorkbench({ soundEnabled, onInferenceRun }) {
     <section className="workbench-section container" id="workbench">
       <div className="section-header-centered">
         <div className="badge-pill-bharat">
-          <span>यंत्रीकरण कार्यशाला</span>
-          <span>•</span>
           <span>Interactive GeoAI Workbench</span>
+          <span>•</span>
+          <span>Building & Pothole Model Explorer</span>
         </div>
         <h2 className="section-title">
           Live Model Explorer: <span className="gradient-saffron">Buildings</span> &{' '}
           <span className="gradient-cyan">Potholes</span> Detection
         </h2>
         <p className="section-subtitle">
-          Test real-time segmentation and road condition audits on high-resolution Indian drone orthomosaics.
+          Test real-time segmentation and road condition audits on high-resolution drone orthomosaics.
           Drag the split slider to compare raw aerial views with AI vector outputs.
         </p>
       </div>
@@ -344,7 +344,7 @@ export default function GeoAIWorkbench({ soundEnabled, onInferenceRun }) {
               </div>
             </div>
 
-            {/* Hidden Input Range Slider for Accessibility & Dragging */}
+            {/* Range Slider for Dragging */}
             <input
               type="range"
               min="0"

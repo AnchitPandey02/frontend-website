@@ -3,7 +3,6 @@ import { playCyberSound } from '../utils/audioFx';
 
 export default function PotholeRoadSection({ soundEnabled }) {
   const [activeSeverityFilter, setActiveSeverityFilter] = useState('all');
-  const [videoPlaying, setVideoPlaying] = useState(false);
   const [videoSrc, setVideoSrc] = useState(null);
 
   const potholes = [
@@ -23,7 +22,6 @@ export default function PotholeRoadSection({ soundEnabled }) {
     if (file) {
       const url = URL.createObjectURL(file);
       setVideoSrc(url);
-      setVideoPlaying(true);
       playCyberSound('success', soundEnabled);
     }
   };
@@ -32,9 +30,9 @@ export default function PotholeRoadSection({ soundEnabled }) {
     <section className="pothole-section container" id="potholes">
       <div className="section-header-centered">
         <div className="badge-pill-bharat">
-          <span>मार्ग-एआई</span>
+          <span>Marg-AI Engine</span>
           <span>•</span>
-          <span>Marg-AI Road Infrastructure Engine</span>
+          <span>Automated Road Infrastructure Scanner</span>
         </div>
         <h2 className="section-title">
           Automated <span className="gradient-saffron">Pothole</span> &{' '}
@@ -42,7 +40,7 @@ export default function PotholeRoadSection({ soundEnabled }) {
         </h2>
         <p className="section-subtitle">
           Turn vehicle dashcams, drone flyovers, and smartphone footage into sub-centimeter road quality audits.
-          Automate Pavement Condition Index (PCI) and International Roughness Index (IRI) across Indian highways.
+          Automate Pavement Condition Index (PCI) and International Roughness Index (IRI) across roadways.
         </p>
       </div>
 
@@ -200,7 +198,7 @@ export default function PotholeRoadSection({ soundEnabled }) {
               <span className="summary-val text-saffron">₹ 4.85 Lakh</span>
             </div>
             <div className="summary-col">
-              <span className="summary-label">NHAI Priority:</span>
+              <span className="summary-label">Maintenance Priority:</span>
               <span className="summary-val text-red">High Urgency</span>
             </div>
             <button
@@ -210,7 +208,7 @@ export default function PotholeRoadSection({ soundEnabled }) {
                 playCyberSound('success', soundEnabled);
               }}
             >
-              📥 Generate PWD Work Order
+              📥 Generate Work Order
             </button>
           </div>
         </div>

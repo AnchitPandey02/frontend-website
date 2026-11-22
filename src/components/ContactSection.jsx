@@ -24,7 +24,7 @@ export default function ContactSection({ soundEnabled }) {
           {/* Left Info */}
           <div className="contact-info">
             <div className="badge-pill-bharat">
-              <span>यंत्रीकरण संपर्क</span>
+              <span>Contact Us</span>
               <span>•</span>
               <span>Connect With Yantrikaran</span>
             </div>
@@ -32,7 +32,7 @@ export default function ContactSection({ soundEnabled }) {
               Transform Your Spatial Intelligence with <span className="gradient-saffron">Yantrikaran AI</span>
             </h2>
             <p className="text-secondary mt-3">
-              Deploy our pre-trained Indian foundation models for building footprint vectorization, automated pothole road inspections,
+              Deploy our pre-trained foundation models for building footprint vectorization, automated pothole road inspections,
               or integrate directly into your enterprise <strong>QGIS</strong> workstations.
             </p>
 
@@ -41,7 +41,7 @@ export default function ContactSection({ soundEnabled }) {
                 <span className="highlight-icon">🏢</span>
                 <div>
                   <strong>Enterprise & Municipal Pilot Programs</strong>
-                  <p className="text-xs text-muted">Proof of concept pilots for Nagar Nigams, PWD & Highway authorities</p>
+                  <p className="text-xs text-muted">Proof of concept pilots for Municipal Corporations, PWD & Highway authorities</p>
                 </div>
               </div>
 
@@ -72,7 +72,7 @@ export default function ContactSection({ soundEnabled }) {
             {submitted ? (
               <div className="submitted-success-box">
                 <div className="success-icon">✓</div>
-                <h3>Namaste! Your Pilot Request Has Been Received.</h3>
+                <h3>Your Pilot Request Has Been Received.</h3>
                 <p className="text-sm text-secondary mt-2">
                   Our geospatial engineering team at <strong>Yantrikaran</strong> will review your survey requirements and connect with your team within 24 hours.
                 </p>
@@ -91,7 +91,7 @@ export default function ContactSection({ soundEnabled }) {
                     type="text"
                     required
                     className="form-input"
-                    placeholder="e.g. Rajesh Sharma"
+                    placeholder="e.g. Alex Sharma"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   />
@@ -103,7 +103,7 @@ export default function ContactSection({ soundEnabled }) {
                     type="email"
                     required
                     className="form-input"
-                    placeholder="rajesh@municipality.gov.in"
+                    placeholder="alex@organization.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
@@ -115,7 +115,7 @@ export default function ContactSection({ soundEnabled }) {
                     type="text"
                     required
                     className="form-input"
-                    placeholder="e.g. BBMP Bengaluru / NHAI / Survey Firm"
+                    placeholder="e.g. City Planning / Highway Authority / Survey Firm"
                     value={formData.organization}
                     onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
                   />
@@ -129,10 +129,10 @@ export default function ContactSection({ soundEnabled }) {
                     onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
                   >
                     <option value="buildings_potholes">Building Footprints & Pothole Audits (Combined)</option>
-                    <option value="potholes_only">NHAI / PWD Pothole & Road Distress Scanner</option>
+                    <option value="potholes_only">Pothole & Road Distress Scanner</option>
                     <option value="buildings_only">Municipal Building Footprint & Tax Mapping</option>
                     <option value="qgis_plugin">QGIS Plugin Enterprise Deployment</option>
-                    <option value="custom_model">Custom Model Training on Our Drone Data</option>
+                    <option value="custom_model">Custom Model Training on Drone Data</option>
                   </select>
                 </div>
 
@@ -148,7 +148,7 @@ export default function ContactSection({ soundEnabled }) {
                 </div>
 
                 <button type="submit" className="btn btn-saffron btn-block glowing-border-btn">
-                  <span>Schedule GeoAI Pilot 🇮🇳</span>
+                  <span>Schedule GeoAI Pilot</span>
                 </button>
               </form>
             )}

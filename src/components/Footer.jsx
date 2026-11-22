@@ -7,11 +7,15 @@ export default function Footer() {
       <div className="container footer-content">
         <div className="footer-left">
           <div className="footer-brand">
-            <span className="brand-title-saffron">Yantrikaran</span>
-            <span className="brand-hindi">यंत्रीकरण</span>
+            <img
+              src="/yantrikaran-icon.png"
+              alt="Yantrikaran Icon"
+              className="footer-icon-img"
+            />
+            <span className="brand-wordmark-text">YANTRIKARAN</span>
           </div>
           <p className="footer-tagline">
-            Automating Geospatial Intelligence & Infrastructure Vision for Bharat 🇮🇳
+            Automating Geospatial Intelligence & Infrastructure Vision
           </p>
           <div className="footer-company-link">
             <span>Official Portal: </span>
@@ -30,9 +34,6 @@ export default function Footer() {
         </div>
 
         <div className="footer-right">
-          <div className="footer-flag-badge">
-            <span>🇮🇳 Proudly Engineered in India</span>
-          </div>
           <span className="text-xs text-muted">
             &copy; {new Date().getFullYear()} Yantrikaran Technologies. All rights reserved.
           </span>

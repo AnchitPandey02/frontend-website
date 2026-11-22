@@ -29,7 +29,7 @@ export default function MediaPlaceholdersSection({ soundEnabled }) {
     <section className="media-section container" id="media-showcase">
       <div className="section-header-centered">
         <div className="badge-pill-bharat">
-          <span>ड्रोन एवं उपग्रह मीडिया गैलरी</span>
+          <span>Media Showcase</span>
           <span>•</span>
           <span>Drone & Satellite Media Center</span>
         </div>
@@ -81,7 +81,7 @@ export default function MediaPlaceholdersSection({ soundEnabled }) {
           </div>
 
           <div className="media-footer text-xs font-mono">
-            <span>SURVEY: Western India Highway Corridor</span>
+            <span>SURVEY: Urban Highway Corridor</span>
             <span className="text-cyan">Status: Video Ready</span>
           </div>
         </div>
@@ -121,7 +121,7 @@ export default function MediaPlaceholdersSection({ soundEnabled }) {
           </div>
 
           <div className="media-footer text-xs font-mono">
-            <span>AREA: Indiranagar Ward 14, Bengaluru</span>
+            <span>AREA: Urban Sector 14, Bengaluru</span>
             <span className="text-green">Status: Raster Ready</span>
           </div>
         </div>
