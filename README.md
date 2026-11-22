@@ -1,128 +1,113 @@
-# 🧠 NeuroHub — AI Model Studio & Frontend Dashboard
+# 🧠 NeuroHub AI Studio — React Edition
 
-A modern, responsive, developer-friendly frontend website designed specifically for connecting, showcasing, testing, and interacting with your custom Machine Learning and Deep Learning models.
+A sleek, cybernetic, production-ready **React 18 + Vite** frontend web dashboard designed to connect, test, benchmark, and showcase custom Machine Learning (ML) & Deep Learning (DL) models.
 
-Repository: [https://github.com/AnchitPandey02/frontend-website](https://github.com/AnchitPandey02/frontend-website)
-
----
-
-## 🌟 Key Features
-
-- **Interactive Neural Constellation Canvas**: Real-time particle network background that magnetically responds to cursor movement with dynamic synapse links and electric pulses.
-- **Cybernetic HUD Telemetry Ribbon**: Displays live model engine state, real-time signal oscilloscope canvas waveform, throughput (~54 tokens/sec), latency stats, and total inference counters.
-- **Sci-Fi Audio FX Synthesizer**: Zero-dependency procedural sound effects generated via browser Web Audio API (tactile clicks, streaming blips, success chords, and error alerts with mute toggle).
-- **Streaming Typewriter Effect**: Natural word-by-word streaming animation with a glowing cyber cursor `▌` and real-time generation halt button (`⏹️ Stop`).
-- **3D Card Perspective Tilt**: Interactive 3D physics tilt on model cards that tracks mouse motion with smooth spring-back.
-- **Computer Vision Scanner Sweep**: Visual neon laser beam that scans uploaded images before drawing confidence bounding boxes and detection tags.
-- **One-Click Backend Presets**: Instant configuration for FastAPI (:8000), Flask (:5000), Ollama (:11434), LM Studio (:1234), and vLLM (:8080).
-- **Model Registry & Hub**: Register, organize, and monitor all your deployed model endpoints with live uptime pings and latency statistics.
-- **NLP & Chat Playground**: Interactive conversational interface with parameter tuning (Temperature, Max Output Tokens, System Prompts), token counts, and latency tracking.
-- **Tabular Feature Predictor**: Input dynamic features for scikit-learn, XGBoost, or regression/classification models (includes presets for Housing, Churn, and Credit).
-- **Universal API Console**: Built-in REST / cURL tester to send custom JSON payloads to any ML endpoint, with live latency timers, status badges, and code snippet exports for Python, cURL, and JavaScript.
-- **Demo Simulation Mode**: Includes a built-in offline simulation mode so the UI works out-of-the-box before your backend server is started.
-- **Dark & Light Mode**: Sleek glassmorphism dark theme with neon purple/cyan accents and instant light mode toggle.
-- **Zero Heavy Frontend Dependencies**: Written in clean semantic HTML5, modern CSS3, and ES6 JavaScript.
+![NeuroHub AI Studio](https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop)
 
 ---
 
-## 📁 Project Structure
+## ⚡ Highlights & Features
 
-```text
-frontend-website/
-├── index.html           # Main frontend interface & playgrounds
-├── styles.css           # Glassmorphism design system & responsive styling
-├── script.js            # Model state management, API requests, & simulation
-├── backend_example.py   # Complete ready-to-run FastAPI Python backend
-└── README.md            # Documentation & setup guide
-```
+### 🎨 Visuals & Epic Animations
+- **Interactive Neural Background Canvas**: Real-time particle constellation with physics, synaptic connections, and interactive mouse gravity attraction.
+- **Signal Oscilloscope Canvas**: Live waveform visualizer that pulses with increased frequency during active model inference.
+- **3D Perspective Tilt Cards**: Interactive 3D gyroscopic rotation responding to cursor physics on model registry cards.
+- **Typewriter Token Streaming**: Simulated token-by-token streaming with blinking cyan neon cursor (`⏹️ Stop` button included).
+- **Computer Vision Laser Sweep**: Neon cyan laser scanline sweeping across preview images during vision inference.
+- **Cybernetic Audio Synthesizer**: Web Audio API sci-fi synthesizer providing real-time acoustic feedback for clicks, token streams, success chimes, ping pings, and errors.
+- **Theme Switcher**: Dark and Light themes with fluid CSS variables and state persistence.
 
----
-
-## 🚀 How to Run the Frontend
-
-You can run `index.html` directly:
-1. Double-click `index.html` in your file explorer, OR
-2. Right-click `index.html` in VS Code and select **Open with Live Server** (or open it with your favorite browser).
-
-The website will load immediately in **Demo Simulation Mode**, allowing you to test every feature without any setup.
+### 🧪 Model Playgrounds & Workbenches
+1. **Model Registry (`ModelsTab`)**: Register, monitor, launch, and manage custom endpoints with status indicators.
+2. **NLP & Chat (`NlpTab`)**: Chat interface supporting streaming responses, quick prompt presets, system prompts, temperature and token controls, and endpoint overrides.
+3. **Computer Vision (`VisionTab`)**: Drag-and-drop image uploader, sample image loader, URL fetcher, dynamic bounding box visualizer with confidence scores, and raw JSON inspector.
+4. **Tabular Predictor (`TabularTab`)**: Interactive feature form with presets for Real Estate Pricing, Customer Churn, and Credit Scoring, plus dynamic field creation and probability gauges.
+5. **Universal API Console (`ApiConsoleTab`)**: REST request runner supporting POST/GET/PUT, payload formatting, latency metrics, and one-click code generation for **Python**, **cURL**, and **JavaScript (fetch)**.
+6. **Backend Integration Guide (`BackendGuideTab`)**: Ready-to-copy boilerplate templates for **FastAPI**, **Flask**, and local LLMs (**Ollama** & **LM Studio**).
 
 ---
 
-## 🔌 Connecting Your Real AI Models
+## 🚀 Getting Started
 
-### 1. Run the Included Python Starter Backend
+### Prerequisites
+- **Node.js** (v18 or higher)
+- **npm** or **pnpm**
 
-A starter FastAPI backend is provided in `backend_example.py`.
+### Installation
 
-```powershell
-# 1. Install FastAPI & Uvicorn
-pip install fastapi uvicorn pydantic
-
-# 2. Run the server
-python backend_example.py
-```
-Your backend will start on `http://localhost:8000`.
-
-### 2. Connect in the Website
-
-1. In the top bar of the website, confirm the **API BASE URL** is set to `http://localhost:8000`.
-2. Click **⚡ Ping Backend** to verify the connection.
-3. Uncheck the **Demo Simulation** toggle so your requests are routed directly to your Python backend!
-
-### 3. Exposing Your Own Models (FastAPI Example)
-
-To hook up your existing PyTorch, TensorFlow, Hugging Face, or scikit-learn models, add an endpoint with CORS enabled:
-
-```python
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
-
-app = FastAPI()
-
-# Required so the browser can make requests to your backend
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-class PromptInput(BaseModel):
-    prompt: str
-
-@app.post("/api/chat")
-def generate_text(data: PromptInput):
-    # Pass data.prompt into your AI model here:
-    prediction = my_ai_model.generate(data.prompt)
-    return {"reply": prediction}
-```
-
----
-
-## 🐙 Push to Your GitHub Repository
-
-To commit your new frontend and push it to [https://github.com/AnchitPandey02/frontend-website](https://github.com/AnchitPandey02/frontend-website):
-
-```powershell
-# Navigate into the frontend-website directory
+```bash
+# Clone the repository
+git clone https://github.com/AnchitPandey02/frontend-website.git
 cd frontend-website
 
-# Stage all files
-git add .
+# Install dependencies
+npm install
 
-# Commit changes
-git commit -m "feat: implement AI Model Studio frontend with interactive playgrounds"
+# Start development server
+npm run dev
+```
 
-# Push to your main branch
-git push origin main
+Visit `http://localhost:3000` in your browser.
+
+### Production Build
+
+```bash
+npm run build
+npm run preview
 ```
 
 ---
 
-## 🛠️ Supported Model Types
-- **Large Language Models (LLMs)**: LLaMA, Mistral, Gemma, GPT, Falcon, custom transformers
-- **Computer Vision**: YOLOv8/v9/v10, ResNet, EfficientNet, ViT, OpenCV pipelines
-- **Tabular & Classical ML**: Scikit-learn, XGBoost, LightGBM, CatBoost, Random Forests
-- **Speech & Audio**: Whisper, Speech-to-text, Audio classifiers
+## 🐍 Backend Quickstart (FastAPI Example)
+
+A complete FastAPI starter is included in `backend_example.py`.
+
+```bash
+# Install Python backend dependencies
+pip install fastapi uvicorn pydantic
+
+# Run the backend server
+uvicorn backend_example:app --reload --port 8000
+```
+
+When your server is running, uncheck **Demo Simulation** in the top bar to route live requests directly to your backend!
+
+---
+
+## 📁 Project Architecture
+
+```
+frontend-website/
+├── index.html                 # Vite HTML entry point
+├── package.json               # Dependencies & scripts
+├── vite.config.js             # Vite configuration
+├── backend_example.py         # Complete FastAPI backend template
+├── src/
+│   ├── main.jsx               # React DOM entry
+│   ├── App.jsx                # Main application state & tab routing
+│   ├── styles.css             # Cyberpunk design system & keyframe animations
+│   ├── components/
+│   │   ├── Navbar.jsx             # Top bar navigation, sound & theme toggles
+│   │   ├── HeroConnectionBar.jsx  # Connection inputs & backend presets
+│   │   ├── TelemetryRibbon.jsx    # Real-time oscilloscope HUD & metrics
+│   │   ├── NeuralBackground.jsx   # Interactive canvas particle network
+│   │   ├── AddModelModal.jsx      # Modal for registering custom models
+│   │   ├── ToastContainer.jsx     # Floating glassmorphic notifications
+│   │   └── tabs/
+│   │       ├── ModelsTab.jsx          # Model cards with 3D tilt
+│   │       ├── NlpTab.jsx             # Chat & token streaming playground
+│   │       ├── VisionTab.jsx          # Bounding box & laser scanner
+│   │       ├── TabularTab.jsx         # Feature predictor & gauges
+│   │       ├── ApiConsoleTab.jsx      # REST API tester & code exporter
+│   │       └── BackendGuideTab.jsx    # Step-by-step backend instructions
+│   └── utils/
+│       ├── audioFx.js         # Web Audio API synthesizer
+│       └── mockBackend.js     # Realistic offline simulation engine
+└── dist/                      # Production build output
+```
+
+---
+
+## 🛡️ License
+
+MIT License &copy; 2026 Anchit Pandey.
