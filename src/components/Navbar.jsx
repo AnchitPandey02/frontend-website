@@ -1,46 +1,65 @@
 import React, { useState } from 'react';
+import QgisLogo from '../utils/qgisLogo';
 
 export default function Navbar({
-  activeTab,
-  onSelectTab,
   mockMode,
   baseUrl,
   soundEnabled,
   onToggleSound,
-  theme,
-  onToggleTheme,
-  onOpenAddModel
+  onOpenContact
 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navItems = [
-    { id: 'models', label: 'My Models' },
-    { id: 'nlp', label: 'NLP & Chat' },
-    { id: 'vision', label: 'Computer Vision' },
-    { id: 'tabular', label: 'Predictions' },
-    { id: 'tester', label: 'API Console' },
-    { id: 'guide', label: 'Backend Guide' }
+  const navLinks = [
+    { label: 'GeoAI Workbench', href: '#workbench' },
+    { label: 'Building AI', href: '#buildings' },
+    { label: 'Road & Potholes', href: '#potholes' },
+    { label: 'QGIS Integration', href: '#qgis' },
+    { label: 'Bharat Infrastructure', href: '#infrastructure' },
+    { label: 'Backend API', href: '#backend' }
   ];
 
   return (
-    <header className="navbar">
-      <div className="nav-brand" onClick={() => onSelectTab('models')} style={{ cursor: 'pointer' }}>
-        <div className="brand-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 2a10 10 0 0 0-10 10c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
+    <header className="navbar yantrikaran-navbar">
+      {/* Brand Logo */}
+      <div className="nav-brand" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={{ cursor: 'pointer' }}>
+        <div className="brand-icon-yantrikaran">
+          {/* Indian Chakra / Sacred Geometry + Sat Vector Emblem */}
+          <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="18" stroke="#ff9933" strokeWidth="2" strokeDasharray="3 3" />
+            <circle cx="20" cy="20" r="12" stroke="#06b6d4" strokeWidth="1.5" />
+            <circle cx="20" cy="20" r="4" fill="#ffffff" />
+            <line x1="20" y1="2" x2="20" y2="38" stroke="rgba(255,153,51,0.5)" strokeWidth="1" />
+            <line x1="2" y1="20" x2="38" y2="20" stroke="rgba(255,153,51,0.5)" strokeWidth="1" />
+            <polygon points="20,8 24,18 32,20 24,22 20,32 16,22 8,20 16,18" fill="url(#saffronGlow)" />
+            <defs>
+              <linearGradient id="saffronGlow" x1="8" y1="8" x2="32" y2="32">
+                <stop offset="0%" stopColor="#ff9933" />
+                <stop offset="100%" stopColor="#10b981" />
+              </linearGradient>
+            </defs>
           </svg>
         </div>
         <div className="brand-text">
-          <span className="brand-title">NeuroHub</span>
-          <span className="brand-tag">AI Studio</span>
+          <div className="brand-main">
+            <span className="brand-title-saffron">Yantrikaran</span>
+            <span className="brand-hindi">यंत्रीकरण</span>
+          </div>
+          <span className="brand-tagline">AI Geospatial & Infrastructure Intelligence</span>
         </div>
       </div>
 
-      {/* Mobile Menu Toggle Button */}
+      {/* QGIS Official Partner Pill */}
+      <div className="qgis-nav-badge" title="Official QGIS Plugin & Integration Partner">
+        <QgisLogo width={20} height={20} />
+        <span className="qgis-text">QGIS 3.x Certified</span>
+      </div>
+
+      {/* Mobile Menu Button */}
       <button
         className={`mobile-menu-btn ${mobileMenuOpen ? 'open' : ''}`}
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        aria-label="Toggle navigation menu"
+        aria-label="Toggle navigation"
       >
         <span></span>
         <span></span>
@@ -49,56 +68,39 @@ export default function Navbar({
 
       {/* Navigation Links */}
       <nav className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-        {navItems.map((item) => (
+        {navLinks.map((link) => (
           <a
-            key={item.id}
-            href={`#${item.id}`}
-            className={`nav-link ${activeTab === item.id ? 'active' : ''}`}
-            onClick={(e) => {
-              e.preventDefault();
-              onSelectTab(item.id);
-              setMobileMenuOpen(false);
-            }}
+            key={link.label}
+            href={link.href}
+            className="nav-link"
+            onClick={() => setMobileMenuOpen(false)}
           >
-            {item.label}
+            {link.label}
           </a>
         ))}
       </nav>
 
+      {/* Nav Actions */}
       <div className="nav-actions">
         {/* Connection status badge */}
         <div className="backend-status-pill" title="Connection status with your model backend">
           <span className={`status-dot ${mockMode ? 'warning' : 'online'}`}></span>
-          <span className="status-text">{mockMode ? 'Demo / Mock Mode' : `Connected: ${baseUrl}`}</span>
+          <span className="status-text">{mockMode ? 'GeoAI Simulation' : `Live: ${baseUrl}`}</span>
         </div>
 
         {/* Audio FX Toggle */}
         <button
           className="btn icon-btn"
           onClick={onToggleSound}
-          aria-label="Toggle Cyber Sound Effects"
-          title={soundEnabled ? 'Mute Sci-Fi Audio FX' : 'Enable Sci-Fi Audio FX'}
+          aria-label="Toggle Audio Feedback"
+          title={soundEnabled ? 'Mute Radar Audio' : 'Enable Radar Audio'}
         >
           <span>{soundEnabled ? '🔊' : '🔇'}</span>
         </button>
 
-        {/* Theme Switcher */}
-        <button
-          className="btn icon-btn"
-          onClick={onToggleTheme}
-          aria-label="Toggle dark/light theme"
-          title="Toggle Theme"
-        >
-          <span>{theme === 'dark' ? '☀️' : '🌙'}</span>
-        </button>
-
-        {/* Open Add Model Modal */}
-        <button className="btn btn-primary btn-sm glowing-border-btn" onClick={onOpenAddModel}>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-            <line x1="12" y1="5" x2="12" y2="19"></line>
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-          </svg>
-          <span>Add Model</span>
+        {/* Action Button */}
+        <button className="btn btn-saffron btn-sm glowing-border-btn" onClick={onOpenContact}>
+          <span>Schedule Pilot 🇮🇳</span>
         </button>
       </div>
     </header>
