@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import InteractiveCursorCanvas from './components/InteractiveCursorCanvas';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import GeoAIWorkbench from './components/GeoAIWorkbench';
@@ -105,9 +104,6 @@ export default function App() {
 
   return (
     <>
-      {/* Interactive Cursor Trail & Click Spark Animation Canvas */}
-      <InteractiveCursorCanvas />
-
       {/* Navigation Bar with Official Yi Icon & Wordmark */}
       <Navbar
         mockMode={mockMode}
